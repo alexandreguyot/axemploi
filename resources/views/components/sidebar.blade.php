@@ -3,14 +3,14 @@
         <button class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent" type="button" onclick="toggleNavbar('example-collapse-sidebar')">
             <i class="fas fa-bars"></i>
         </button>
-        <a class="md:block text-left md:pb-2 text-blueGray-700 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0" href="{{ route('admin.home') }}">
+        <a class="md:block text-left md:pb-2 text-slate-700 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0" href="{{ route('manager.dashboard') }}">
             {{ trans('panel.site_title') }}
         </a>
         <div class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded hidden" id="example-collapse-sidebar">
-            <div class="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-blueGray-300">
+            <div class="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-slate-300">
                 <div class="flex flex-wrap">
                     <div class="w-6/12">
-                        <a class="md:block text-left md:pb-2 text-blueGray-700 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0" href="{{ route('admin.home') }}">
+                        <a class="md:block text-left md:pb-2 text-slate-700 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0" href="{{ route('manager.dashboard') }}">
                             {{ trans('panel.site_title') }}
                         </a>
                     </div>
@@ -35,7 +35,7 @@
 
             <ul class="md:flex-col md:min-w-full flex flex-col list-none">
                 <li class="items-center">
-                    <a href="{{ route("admin.home") }}" class="{{ request()->is("admin") ? "sidebar-nav-active" : "sidebar-nav" }}">
+                    <a href="{{ route("manager.dashboard") }}" class="{{ request()->is("admin") ? "sidebar-nav-active" : "sidebar-nav" }}">
                         <i class="fas fa-tv"></i>
                         {{ trans('global.dashboard') }}
                     </a>
@@ -43,7 +43,7 @@
 
                 @can('offer_access')
                     <li class="items-center">
-                        <a class="{{ request()->is("admin/offers*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="{{ route("admin.offers.index") }}">
+                        <a class="{{ request()->is("offers*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="{{ route("offers.index") }}">
                             <i class="fa-fw c-sidebar-nav-icon fas fa-building">
                             </i>
                             {{ trans('cruds.offer.title') }}
@@ -52,7 +52,7 @@
                 @endcan
                 @can('user_management_access')
                     <li class="items-center">
-                        <a class="has-sub {{ request()->is("admin/permissions*")||request()->is("admin/roles*")||request()->is("admin/users*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="#" onclick="window.openSubNav(this)">
+                        <a class="has-sub {{ request()->is("permissions*")||request()->is("roles*")||request()->is("users*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="#" onclick="window.openSubNav(this)">
                             <i class="fa-fw fas c-sidebar-nav-icon fa-users">
                             </i>
                             {{ trans('cruds.userManagement.title') }}
@@ -60,7 +60,7 @@
                         <ul class="ml-4 subnav hidden">
                             @can('permission_access')
                                 <li class="items-center">
-                                    <a class="{{ request()->is("admin/permissions*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="{{ route("admin.permissions.index") }}">
+                                    <a class="{{ request()->is("permissions*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="{{ route("permissions.index") }}">
                                         <i class="fa-fw c-sidebar-nav-icon fas fa-unlock-alt">
                                         </i>
                                         {{ trans('cruds.permission.title') }}
@@ -69,7 +69,7 @@
                             @endcan
                             @can('role_access')
                                 <li class="items-center">
-                                    <a class="{{ request()->is("admin/roles*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="{{ route("admin.roles.index") }}">
+                                    <a class="{{ request()->is("roles*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="{{ route("roles.index") }}">
                                         <i class="fa-fw c-sidebar-nav-icon fas fa-briefcase">
                                         </i>
                                         {{ trans('cruds.role.title') }}
@@ -78,7 +78,7 @@
                             @endcan
                             @can('user_access')
                                 <li class="items-center">
-                                    <a class="{{ request()->is("admin/users*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="{{ route("admin.users.index") }}">
+                                    <a class="{{ request()->is("users*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="{{ route("users.index") }}">
                                         <i class="fa-fw c-sidebar-nav-icon fas fa-user">
                                         </i>
                                         {{ trans('cruds.user.title') }}

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <div class="row">
-    <div class="card bg-blueGray-100">
+    <div class="card bg-slate-100">
         <div class="card-header">
             <div class="card-header-container">
                 <h6 class="card-title">
@@ -76,11 +76,11 @@
             </div>
             <div class="form-group">
                 @can('user_edit')
-                    <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-indigo mr-2">
+                    <a href="{{ route('users.edit', $user) }}" class="btn btn-indigo mr-2">
                         {{ trans('global.edit') }}
                     </a>
                 @endcan
-                <a href="{{ route('admin.users.index') }}" class="btn btn-secondary">
+                <a href="{{ route('users.index') }}" class="btn btn-secondary">
                     {{ trans('global.back') }}
                 </a>
             </div>

@@ -32,7 +32,7 @@ class Create extends Component
         $this->role->save();
         $this->role->permissions()->sync($this->permissions);
 
-        return redirect()->route('admin.roles.index');
+        return redirect()->route('roles.index');
     }
 
     protected function rules(): array

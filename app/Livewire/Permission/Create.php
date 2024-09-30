@@ -25,7 +25,7 @@ class Create extends Component
 
         $this->permission->save();
 
-        return redirect()->route('admin.permissions.index');
+        return redirect()->route('permissions.index');
     }
 
     protected function rules(): array

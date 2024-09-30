@@ -6,7 +6,7 @@ use App\Models\Role;
 use App\Models\User;
 use Livewire\Component;
 
-class Create extends Component
+class Edit extends Component
 {
     public User $user;
 
@@ -18,13 +18,14 @@ class Create extends Component
 
     public function mount(User $user)
     {
-        $this->user = $user;
+        $this->user  = $user;
+        $this->roles = $this->user->roles()->pluck('id')->toArray();
         $this->initListsForFields();
     }
 
     public function render()
     {
-        return view('livewire.user.create');
+        return view('livewire.user.edit');
     }
 
     public function submit()
@@ -34,7 +35,7 @@ class Create extends Component
         $this->user->save();
         $this->user->roles()->sync($this->roles);
 
-        return redirect()->route('admin.users.index');
+        return redirect()->route('users.index');
     }
 
     protected function rules(): array
@@ -47,11 +48,10 @@ class Create extends Component
             'user.email' => [
                 'email:rfc',
                 'required',
-                'unique:users,email',
+                'unique:users,email,' . $this->user->id,
             ],
             'password' => [
                 'string',
-                'required',
             ],
             'roles' => [
                 'required',

@@ -6,6 +6,6 @@ trait WithConfirmation
 {
     public function confirm($callback, ...$argv)
     {
-        $this->emit('confirm', compact('callback', 'argv'));
+        $this->dispatch('confirm', compact('callback', 'argv'));
     }
 }

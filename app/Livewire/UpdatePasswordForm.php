@@ -36,7 +36,7 @@ class UpdatePasswordForm extends Component
 
         $this->resetState();
 
-        $this->emit('saved');
+        $this->dispatch('saved');
     }
 
     public function render()

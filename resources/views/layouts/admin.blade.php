@@ -14,14 +14,14 @@
         @stack('styles')
 </head>
 
-<body class="text-blueGray-800 antialiased">
+<body class="text-slate-800 antialiased">
 
     <noscript>You need to enable JavaScript to run this app.</noscript>
 
     <div id="app">
         <x-sidebar />
 
-        <div class="relative md:ml-64 bg-blueGray-50 min-h-screen">
+        <div class="relative md:ml-64 bg-slate-50 min-h-screen">
             <x-nav />
 
             <div class="relative bg-pink-600 md:pt-32 pb-32 pt-12">
@@ -41,7 +41,7 @@
 
     </div>
 
-    <form id="logoutform" action="{{ route('logout') }}" method="POST" style="display: none;">
+    <form id="logoutform" action="{{ route('manager.logout') }}" method="POST" style="display: none;">
         {{ csrf_field() }}
     </form>
     <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>

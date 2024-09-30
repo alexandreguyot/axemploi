@@ -25,7 +25,7 @@ class Create extends Component
 
         $this->offer->save();
 
-        return redirect()->route('admin.offers.index');
+        return redirect()->route('offers.index');
     }
 
     protected function rules(): array
