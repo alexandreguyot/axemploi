@@ -11,7 +11,9 @@ module.exports = {
         slate: require('tailwindcss/colors').slate,
         lightBlue: colors.sky,
         orange: colors.orange,
-        red: colors.red
+        red: colors.red,
+        axemploiBlue: "#0E78AD",
+        axemploiRed: "#e64d3c",
       },
       minHeight: {
         'screen-75': '75vh'

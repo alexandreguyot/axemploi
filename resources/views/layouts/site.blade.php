@@ -8,10 +8,12 @@
     <title>{{ __('panel.site_title') }}</title>
 </head>
 
-<body class="text-white">
+<body class="text-white min-h-screen flex flex-col">
     @include('site.header')
     @yield('content')
     @include('site.footer')
+
+    @stack('scripts')
 </body>
 
 
