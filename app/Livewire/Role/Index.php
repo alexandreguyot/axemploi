@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Livewire\Role;
+namespace App\Livewire\Role;
 
-use App\Http\Livewire\WithConfirmation;
-use App\Http\Livewire\WithSorting;
+use App\Livewire\WithConfirmation;
+use App\Livewire\WithSorting;
 use App\Models\Role;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Gate;

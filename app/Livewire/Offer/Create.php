@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Offer;
+namespace App\Livewire\Offer;
 
 use App\Models\Offer;
 use Livewire\Component;

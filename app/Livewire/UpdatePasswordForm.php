@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use Hash;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Livewire\Permission;
+namespace App\Livewire\Permission;
 
-use App\Http\Livewire\WithConfirmation;
-use App\Http\Livewire\WithSorting;
+use App\Livewire\WithConfirmation;
+use App\Livewire\WithSorting;
 use App\Models\Permission;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Gate;
